@@ -32,6 +32,7 @@ $(function() {
          * and that the URL is not empty.
          */
         it('should have valid URL', function() {
+            // run forEach through RSS urls and check their validity
             allFeeds.forEach(function(feed) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).not.toBe(0);
@@ -44,6 +45,7 @@ $(function() {
          * and that the name is not empty.
          */
         it('should have valid Name', function() {
+            // run forEach through RSS names and check their validity
             allFeeds.forEach(function(feed) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
@@ -54,7 +56,8 @@ $(function() {
 
 
     /* TODO: Write a new test suite named "The menu" */
-    describe('The menu', function() {    
+    describe('The menu', function() { 
+        // define elements that are needed for this testing
         var body = $('body');
         var menuIcon = $('.menu-icon-link');
         /* TODO: Write a test that ensures the menu element is
@@ -90,7 +93,7 @@ $(function() {
         beforeEach(function(done) {
             loadFeed(0, done);
         });
-        
+        // after calling 'locaFeed' function, checking if there is an entry
         it('should have at least a single .entry element', function(done) {
             var entry = $('.entry');
             expect(entry.length).toBeGreaterThan(0);
@@ -101,6 +104,7 @@ $(function() {
     
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
+        /* defining two variables to compare the content of each feed, and see if there is changes. */
         var firstFeed;
         var secondFeed;
         /* TODO: Write a test that ensures when a new feed is loaded
